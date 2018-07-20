@@ -20,5 +20,6 @@
       - resource_class.omniauth_providers.each do |provider|
         = link_to omniauth_authorize_path(resource_name, provider) do
           .siimple-btn.siimple-btn--light
-            = "Sign in with #{OmniAuth::Utils.camelize(provider)}"
             = image_tag "tumblr.png", style: "max-height: 1em;"
+            br
+            = "Sign in with #{OmniAuth::Utils.camelize(provider)}"
