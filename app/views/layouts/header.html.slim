@@ -3,15 +3,12 @@
   .siimple--float-right
     - if current_user
       .siimple-navbar-item
-        = link_to "Create Transaction", new_transfer_path, class: "siimple-btn siimple-btn--grey"
-      .siimple-navbar-item
         = link_to "Logout", destroy_user_session_path(@user), :method => :delete, class: "siimple-navbar-item"
 
     - else
       / TODO: Create a helper with this
-      - if devise_mapping.omniauthable?
-        - resource_class.omniauth_providers.each do |provider|
-          = link_to omniauth_authorize_path(resource_name, provider) do
-            .siimple-navbar-item.siimple-btn--light
-              = "Sign in with "
-              = image_tag "tumblr.png", style: "max-height: 1.5em;"
+
+      = link_to new_user_session_path do
+        .siimple-navbar-item.siimple-btn--light
+          = "Sign in with "
+          = image_tag "tumblr.png", style: "max-height: 1.5em;"
