@@ -12,27 +12,49 @@
  *
  *= require_tree .
  *= require siimple
+
  *= require_self
  */
-/* THEME COLORS */
+ @import "_variables.scss";
+ @import "_functions.scss";
 
- $siimple-default-primary: #fc5c65 !default;
- body {
-   display: flex;
-   min-height: 100vh;
-   flex-direction: column;
- }
- main {
-   flex: 1 0 auto;
- }
- .siimple-input{
-   line-height: 2em;
-   font-size: 2em;
- }
- .siimple-select{
-   line-height: 2em;
-   font-size: 2em;
-   height: 2em;
+/* THEME COLORS */
+$primary: #2f2227 !default;
+$secondary: #191a20 !default;
+$main: #fdf6f0 !default;
+
+.toplr-header{
+ background-color: $primary;
+}
+.toplr-footer{
+  background-color: $secondary;
+}
+.primary-text{
+  color: $primary;
+}
+.secondary-text{
+  color: $secondary;
+}
+.main-text{
+  color: $main
+}
+body {
+ display: flex;
+ min-height: 100vh;
+ flex-direction: column;
+ background: $main;
+}
+main {
+ flex: 1 0 auto;
+}
+.siimple-input{
+ line-height: 2em;
+ font-size: 2em;
+}
+.siimple-select{
+ line-height: 2em;
+ font-size: 2em;
+ height: 2em;
 }
 .siimple-btn{
   height: 1em;

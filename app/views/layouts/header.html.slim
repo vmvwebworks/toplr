@@ -1,6 +1,6 @@
-.siimple-navbar.siimple-navbar--extra-large.siimple-navbar--light
-  = link_to "Toplr", root_path, class: "siimple-navbar-title"
+.siimple-navbar.siimple-navbar--extra-large.siimple-navbar.toplr-header
+  = link_to "Toplr", root_path, class: "siimple-navbar-title main-text"
   .siimple--float-right
     - if current_user
       .siimple-navbar-item
-        = link_to "Logout", destroy_user_session_path(@user), :method => :delete, class: "siimple-navbar-item"
+        = link_to "Logout", destroy_user_session_path(@user), :method => :delete, class: "siimple-navbar-item main-text"
