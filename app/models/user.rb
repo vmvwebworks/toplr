@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :omniauthable, omniauth_providers: [:tumblr]
+  devise :database_authenticatable, :registerable, :trackable, :omniauthable, omniauth_providers: [:tumblr]
   def self.from_omniauth(access_token)
     data = access_token.info
     puts access_token.to_yaml
