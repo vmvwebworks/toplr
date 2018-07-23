@@ -1,14 +1,6 @@
-.siimple-navbar.siimple-navbar--extra-large.siimple-navbar--dark
+.siimple-navbar.siimple-navbar--extra-large.siimple-navbar--light
   = link_to "Toplr", root_path, class: "siimple-navbar-title"
   .siimple--float-right
     - if current_user
       .siimple-navbar-item
         = link_to "Logout", destroy_user_session_path(@user), :method => :delete, class: "siimple-navbar-item"
-
-    - else
-      / TODO: Create a helper with this
-
-      = link_to new_user_session_path do
-        .siimple-navbar-item.siimple-btn--light
-          = "Sign in with "
-          = image_tag "tumblr.png", style: "max-height: 1.5em;"
