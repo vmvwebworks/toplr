@@ -14,12 +14,11 @@
 /   = link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name)
 /   br
 
-.siimple-box[align="center"]
-  .siimple-box-title
-    - if devise_mapping.omniauthable?
-      - resource_class.omniauth_providers.each do |provider|
-        = link_to omniauth_authorize_path(resource_name, provider) do
-          .siimple-btn.siimple-btn--light
-            = image_tag "tumblr.png", style: "max-height: 1em;"
-            br
-            = "Sign in with #{OmniAuth::Utils.camelize(provider)}"
+.siimple-content.siimple-jumbotron.siimple-jumbotron--extra-large.main-text.toplr-header[align="center" style="height: 100%;"]
+  - if devise_mapping.omniauthable?
+    - resource_class.omniauth_providers.each do |provider|
+      = link_to omniauth_authorize_path(resource_name, provider), class: "siimple-link" do
+        .siimple-jumbotron-title.siimple-h1.main-text
+          = image_tag "tumblr.png", style: "max-height: 3em;"
+          br
+          = "Sign in with #{OmniAuth::Utils.camelize(provider)}"
