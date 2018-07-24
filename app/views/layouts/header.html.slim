@@ -1,5 +1,11 @@
-.siimple-navbar.siimple-navbar--extra-large.siimple-navbar.toplr-header
+.siimple-navbar.siimple-navbar--extra-large.siimple-navbar
   = link_to "Toplr", root_path, class: "siimple-navbar-title main-text"
+  - if current_user
+    .siimple-navbar-item
+      = link_to "Profile", root_path, class: "siimple-navbar-subtitle main-text"
+
+    .siimple-navbar-item.
+      = search_field_tag("search", "search", class: "siimple-input siimple-input--fluid ")
   .siimple--float-right
     - if current_user
       .siimple-navbar-item

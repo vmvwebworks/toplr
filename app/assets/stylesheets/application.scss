@@ -19,9 +19,11 @@
  @import "_functions.scss";
 
 /* THEME COLORS */
+
 $primary: #2f2227 !default;
 $secondary: #191a20 !default;
 $main: #fdf6f0 !default;
+$main-dark: #181215 !default;
 
 .toplr-header{
  background-color: $primary;
@@ -42,7 +44,7 @@ body {
  display: flex;
  min-height: 100vh;
  flex-direction: column;
- background: $main;
+ background: $main-dark;
 }
 main {
  flex: 1 0 auto;
