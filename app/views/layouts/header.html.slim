@@ -1,12 +1,13 @@
-.siimple-navbar.siimple-navbar--extra-large.siimple-navbar
+.siimple-navbar.siimple-navbar--extra-large.siimple-navbar.toplr-header
   = link_to "Toplr", root_path, class: "siimple-navbar-title main-text"
-  - if current_user
-    .siimple-navbar-item
-      = link_to "Profile", root_path, class: "siimple-navbar-subtitle main-text"
-
-    .siimple-navbar-item.
-      = search_field_tag("search", "search", class: "siimple-input siimple-input--fluid ")
-  .siimple--float-right
+  .siimple-navbar-item
     - if current_user
-      .siimple-navbar-item
-        = link_to "Logout", destroy_user_session_path(@user), :method => :delete, class: "siimple-navbar-item main-text"
+      = link_to "Profile", root_path, class: "siimple-navbar-subtitle main-text"
+      = link_to "Chats", root_path, class: "siimple-navbar-subtitle main-text"
+  .siimple--float-right
+    .siimple-navbar-item
+      - if current_user
+          = link_to "Logout", destroy_user_session_path(@user), :method => :delete, class: "siimple-navbar-item main-text"
+.siimple-navbar.siimple-navbar--extra-large.toplr-header
+  .siimple-navbar-item--fluid
+    = search_field_tag("search", "search", class: "siimple-input siimple-input--fluid toplr-header main-text", placeholder: "Search")

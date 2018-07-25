@@ -19,10 +19,11 @@
  @import "_functions.scss";
 
 /* THEME COLORS */
-
+$siimple-default-primary: #2f2227 !default;
 $primary: #2f2227 !default;
 $secondary: #191a20 !default;
 $main: #fdf6f0 !default;
+$main-light: #d8d4f2 !default;
 $main-dark: #181215 !default;
 
 .toplr-header{
@@ -63,6 +64,17 @@ main {
   line-height: 1em;
   font-size: 1em;
 }
+.siimple-list-item:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.siimple-list-item:last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
 .siimple-box--primary{
   background: $primary;
+}
+.toplr-list{
+  background-color: $main-light;
 }
