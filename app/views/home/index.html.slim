@@ -1,45 +1,6 @@
 .siimple-grid
   .siimple-grid-row
     .siimple-grid-col.siimple-grid-col--4
-      .siimple-list.siimple-list--hover
-        .siimple-list-item.toplr-list
-          span.siimple-tag.siimple-tag--primary.siimple-tag--rounded
-            | 0
-          |  Item 1
-        .siimple-list-item.toplr-list
-          span.siimple-tag.siimple-tag--primary.siimple-tag--rounded
-            | 0
-          |  Item 1
-        .siimple-list-item.toplr-list
-          span.siimple-tag.siimple-tag--error.siimple-tag--rounded
-            | 10
-          |  Item 2
-    .siimple-grid-col.siimple-grid-col--2
-      .siimple-list.siimple-list--hover
-        .siimple-list-item.toplr-list
-          span.siimple-tag.siimple-tag--primary.siimple-tag--rounded
-            | 0
-          |  Track 1
-        .siimple-list-item.toplr-list
-          span.siimple-tag.siimple-tag--primary.siimple-tag--rounded
-            | 0
-          |  Track 2
-        .siimple-list-item.toplr-list
-          span.siimple-tag.siimple-tag--error.siimple-tag--rounded
-            | 10
-          |  Track 3
-        .siimple-list-item.toplr-list
-          span.siimple-tag.siimple-tag--error.siimple-tag--rounded
-            | 10
-          |  Track 4
-        .siimple-list-item.toplr-list
-          span.siimple-tag.siimple-tag--error.siimple-tag--rounded
-            | 10
-          |  Track 5
-        .siimple-list-item.toplr-list
-          span.siimple-tag.siimple-tag--error.siimple-tag--rounded
-            | 10
-          |  Track 6
       .siimple-box.siimple-box--dark
         .siimple-box-title
           | My tags
@@ -48,7 +9,18 @@
             | tag
           .siimple-tag.siimple-tag--light
             | tag
-    .siimple-grid-col.siimple-grid-col--6
+
+      .siimple-box
+        .siimple-box-title
+          | My top list
+          .siimple-box-detail
+            .siimple-list.siimple-list--hover
+              - arr = Array(1..6)
+              - arr.each do |a|
+                .siimple-list-item.toplr-list
+                  = "Track name #{a}"
+
+    .siimple-grid-col.siimple-grid-col--8
       .siimple-grid
         .siimple-grid-row
           .siimple-grid-col.siimple-grid-col--4
