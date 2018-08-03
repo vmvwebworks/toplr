@@ -5,20 +5,26 @@
         .siimple-box-title
           | My tags
         .siimple-box-detail
-          .siimple-tag.siimple-tag--light
-            | tag
-          .siimple-tag.siimple-tag--light
-            | tag
+          = form_with url: user_registration_path(current_user), html: { method: :put } do |f|
+            = f.text_field :tag, class: "siimple-input siimple-input--fluid", placeholder: "Add tag to your profile"
+
+        .siimple-box-detail
+          = render current_user.tags
+
 
       .siimple-box
         .siimple-box-title
           | My top list
           .siimple-box-detail
+            = form_with model: current_user.tracks.new do |f|
+              = f.text_field :name, class: "siimple-input siimple-input--fluid", placeholder: "track name"
+              = f.text_field :link, class: "siimple-input siimple-input--fluid", placeholder: "track link"
+              = f.submit "Add track"
+
+          .siimple-box-detail
             .siimple-list.siimple-list--hover
-              - arr = Array(1..6)
-              - arr.each do |a|
-                .siimple-list-item.toplr-list
-                  = "Track name #{a}"
+              = render current_user.tracks
+
 
     .siimple-grid-col.siimple-grid-col--8
       .siimple-grid

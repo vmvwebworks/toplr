@@ -1,8 +1,10 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  has_one :top_list
-  has_many :tracks, through: :top_list
+
+  has_many :tracks
+  acts_as_taggable
+  accepts_nested_attributes_for :tracks
   devise :database_authenticatable, :registerable, :trackable, :omniauthable, omniauth_providers: [:tumblr]
   def self.from_omniauth(access_token)
     data = access_token.info
